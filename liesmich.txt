@@ -1,0 +1,52 @@
+ForeverThreat 1.7.0 – Threat-Meter für WoW Forever
+
+Installation
+  Den Ordner "ForeverThreat" nach <WoW>/<Forever-Ordner>/Interface/AddOns kopieren
+  (in der Beta: _classic_beta_). Danach WoW neu starten oder /reload.
+  Meldet das Spiel "veraltet": in der Addon-Liste "Veraltete Addons laden"
+  anhaken oder die Zahl hinter "## Interface:" in ForeverThreat.toc anpassen.
+
+Einstellungen
+  Knopf mit den drei Strichen oben rechts (oder /ft menu): Design und Tank-Modus
+  (je eine Auswahl) sowie Anzeige per Klick. ESC schliesst.
+  Tank-Modus (nur in der DPS-Ansicht): Tank-Vorsprung, Über dem Tank,
+  Aggro-Klau melden oder Aus. In der Tank-Ansicht ist er immer aus.
+  Ansicht:
+    DPS / Heiler – wenig Bedrohung grün, nahe am Aggro-Ziehen rot,
+                   Alarm ab der Warnschwelle
+    Tank         – Aggro (100 %) grün, ab 60 % gelb, darunter rot,
+                   Alarm sobald du die Aggro verlierst
+  Rahmen: leuchtet in deiner aktuellen Farbe und pulsiert ruhig,
+          bei Alarm blinkt er schnell. Es gibt keinen Warnton.
+
+Fenster
+  /ft unlock, dann: Kopfzeile ziehen = verschieben,
+  Ecke unten rechts ziehen = Breite und Höhe ändern. /ft lock fixiert.
+  Position und Grösse werden gespeichert.
+
+Anzeige
+  Balken / Prozent      = Bedrohung bis zum Aggro-Wechsel (100 % = du ziehst Aggro)
+  Weisse fette Zahl     = Rohwert der Bedrohung (abgekürzt, k = Tausend)
+  Roter Streifen links  = hat gerade Aggro
+  Tank-Zeile "+35 %"    = Polster: so weit ist der Nächste noch vom Aggro-Ziehen weg
+                          (grün ab 30 %, gelb ab 10 %, darunter rot)
+  Orange "+8 %"         = schon 8 % mehr Bedrohung als der Tank; Aggro wechselt
+                          erst bei 110 % (Nahkampf) bzw. 130 % (Distanz)
+  Roter Text im Kopf    = jemand ohne Tank-Rolle hat dem Tank die Aggro geklaut
+  Leiste unter Kopf     = deine Bedrohung (Farben je nach Ansicht)
+  Feine Linie im Balken = Warnschwelle
+
+Befehle (/ft oder /foreverthreat)
+  menu                   Einstellungen öffnen
+  tank / dps             Ansicht wählen
+  lock / unlock          Fenster fixieren / verschieben und Grösse ändern
+  show / hide / toggle   ein-/ausblenden
+  theme [modern|glas|klassisch]   Design wechseln (ohne Wert: nächstes)
+  polster / over / klau / aus   Tank-Modus wählen
+  warn <50-100>          Warnschwelle (Standard 90)
+  glow                   leuchtenden Rahmen an/aus (Alarm blinkt immer)
+  values                 Rohwerte an/aus
+  always                 auch ohne Bedrohung anzeigen
+  scale <0.5-2>, rows <1-25>, width <160-500>
+  test                   Beispieldaten (alle 15 s klaut "Frostina" die Aggro)
+  reset                  alles zurücksetzen
