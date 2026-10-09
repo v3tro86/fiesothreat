@@ -1,6 +1,6 @@
 local ADDON = ...
-local VERSION = "1.7.0"
-local PREFIX = "|cff33ccffForeverThreat|r: "
+local VERSION = "1.8.0"
+local PREFIX = "|cff33ccffFiesoThreat|r: "
 
 local format = string.format
 local floor = math.floor
@@ -25,7 +25,7 @@ local GERMAN = GetLocale and GetLocale() == "deDE"
 local L
 if GERMAN then
     L = {
-        idle = "ForeverThreat",
+        idle = "FiesoThreat",
         aggro = "AGGRO",
         design = "Design",
         view = "Ansicht",
@@ -68,7 +68,7 @@ if GERMAN then
         badNumber = "Ungültiger Wert. Erlaubt: %s",
         badTheme = "Unbekanntes Design. Verfügbar: modern, glas, klassisch",
         help = {
-            "Befehle (/ft oder /foreverthreat):",
+            "Befehle (/ft oder /fiesothreat):",
             "  menu – Einstellungen öffnen (auch über den Knopf oben rechts)",
             "  lock / unlock – Fenster fixieren / verschieben und Grösse ändern",
             "  show / hide / toggle – Fenster ein-/ausblenden",
@@ -86,7 +86,7 @@ if GERMAN then
     }
 else
     L = {
-        idle = "ForeverThreat",
+        idle = "FiesoThreat",
         aggro = "AGGRO",
         design = "Theme",
         view = "View",
@@ -129,7 +129,7 @@ else
         badNumber = "Invalid value. Allowed: %s",
         badTheme = "Unknown theme. Available: modern, glass, classic",
         help = {
-            "Commands (/ft or /foreverthreat):",
+            "Commands (/ft or /fiesothreat):",
             "  menu – open settings (also the button top right)",
             "  lock / unlock – lock, or move and resize the window",
             "  show / hide / toggle – show or hide the window",
@@ -242,8 +242,8 @@ local function LoadDB()
     -- Die Forever-Beta hat kontoweite SavedVariables zeitweise nicht wieder
     -- eingelesen. Darum zeigen Konto- und Charaktervariable auf dieselbe
     -- Tabelle; geladen wird, was vorhanden ist.
-    local saved = ForeverThreatDB
-    if type(saved) ~= "table" then saved = ForeverThreatCharDB end
+    local saved = FiesoThreatDB
+    if type(saved) ~= "table" then saved = FiesoThreatCharDB end
     if type(saved) ~= "table" then saved = {} end
     -- Version 1.0/1.1 speicherte eine Balkenzahl statt einer Höhe
     if saved.height == nil and type(saved.rows) == "number" then
@@ -265,8 +265,8 @@ local function LoadDB()
     if not TANK_MODES[saved.tankMode] then saved.tankMode = defaults.tankMode end
     if saved.view ~= "tank" and saved.view ~= "dps" then saved.view = defaults.view end
     db = saved
-    ForeverThreatDB = saved
-    ForeverThreatCharDB = saved
+    FiesoThreatDB = saved
+    FiesoThreatCharDB = saved
 end
 
 local function Theme() return THEMES[db.theme] or THEMES.modern end
@@ -454,7 +454,7 @@ local function ApplyLayout()
 end
 
 local function CreateUI()
-    frame = CreateFrame("Frame", "ForeverThreatFrame", UIParent)
+    frame = CreateFrame("Frame", "FiesoThreatFrame", UIParent)
     frame:SetFrameStrata("MEDIUM")
     frame:SetClampedToScreen(true)
     frame:SetMovable(true)
@@ -1172,7 +1172,7 @@ local function MenuOption(y, id, label, radio, get, set)
 end
 
 local function CreateMenu()
-    menu = CreateFrame("Frame", "ForeverThreatMenu", UIParent)
+    menu = CreateFrame("Frame", "FiesoThreatMenu", UIParent)
     menu:SetFrameStrata("DIALOG")
     menu:SetWidth(MENU_W)
     menu:SetClampedToScreen(true)
@@ -1229,7 +1229,7 @@ local function CreateMenu()
 
     menu:SetHeight(-y + 8)
     menu:Hide()
-    if UISpecialFrames then table.insert(UISpecialFrames, "ForeverThreatMenu") end  -- ESC schliesst
+    if UISpecialFrames then table.insert(UISpecialFrames, "FiesoThreatMenu") end  -- ESC schliesst
 end
 
 function ToggleMenu()
@@ -1342,9 +1342,9 @@ local function Toggle(key, onMsg, offMsg)
     Print(db[key] and onMsg or offMsg)
 end
 
-SLASH_FOREVERTHREAT1 = "/ft"
-SLASH_FOREVERTHREAT2 = "/foreverthreat"
-SlashCmdList["FOREVERTHREAT"] = function(msg)
+SLASH_FIESOTHREAT1 = "/ft"
+SLASH_FIESOTHREAT2 = "/fiesothreat"
+SlashCmdList["FIESOTHREAT"] = function(msg)
     local cmd, arg = string.match(string.lower(msg or ""), "^%s*(%S*)%s*(.-)%s*$")
     arg = string.gsub(arg, ",", ".")
 
