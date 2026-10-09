@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: FiesoThreat
+## Notes: Compact threat meter for your current target.
+## Notes-deDE: Kompaktes Bedrohungs-Meter für dein aktuelles Ziel.
+## Author: FiesoThreat
+## Version: 1.8.0
+## SavedVariables: FiesoThreatDB
+## SavedVariablesPerCharacter: FiesoThreatCharDB
+
+FiesoThreat.lua
