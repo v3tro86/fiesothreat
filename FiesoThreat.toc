@@ -2,7 +2,7 @@
 ## Title: FiesoThreat
 ## Notes: Compact threat meter for your current target.
 ## Notes-deDE: Kompaktes Bedrohungs-Meter für dein aktuelles Ziel.
-## Author: FiesoThreat
+## Author: Fiesokic & Giftbräu Addon Manufaktur
 ## Version: 1.8.0
 ## SavedVariables: FiesoThreatDB
 ## SavedVariablesPerCharacter: FiesoThreatCharDB
