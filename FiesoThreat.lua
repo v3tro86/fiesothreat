@@ -1,3 +1,4 @@
+-- Fiesokic & Giftbräu Addon Manufaktur
 local ADDON = ...
 local VERSION = "1.8.0"
 local PREFIX = "|cff33ccffFiesoThreat|r: "
